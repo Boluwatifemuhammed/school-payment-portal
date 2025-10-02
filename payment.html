@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="logos/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script type="text/javascript" src="acct-validation.js" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+
+</head>
+<style>
+
+     body{
+        background-color: rgb(88, 88, 255);
+        font-family: 'Sora';
+        margin: 0;
+    
+    }
+
+    
+    h4{
+        font-size: clamp(0.5rem, 1vw + 1rem, 1rem);
+    }
+    h5{
+        font-size: clamp(1rem, 1vw + 1.5rem, 2rem);
+    }
+    .pay-div{
+        width: 80%;
+        height: 85vh;
+        background-color: #ffffff;
+        box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+        margin: 5% 10%;
+        transform:translateX(100%);
+        transition: transform 0.7s ease-in;
+        
+    }
+
+    .pay-div.loaded{
+        transform: translateX(0)
+    }
+    .both-input{
+        display: flex;
+    }
+    .account-info{
+        margin: 5vh 3.5vw;
+        width: 40%;
+        height: 80%;
+        background-color: rgb(237, 243, 248);
+        border-radius: 20px;
+        /* padding-left: 3%;
+        padding-top: 2%; */
+        padding: 3%;
+    }
+    .acc-info{
+        margin-top: 3vh;
+    }
+    .acc-info h5{
+        margin-top: -2.3vh;
+        font-size: large;
+        
+    }
+    .acc-info h4{
+        color: rgb(148, 148, 148);
+        
+    }
+
+    i{
+        cursor: pointer;
+    }
+
+    .sch-logo{
+        display: flex;
+    }
+    .sch-logo h4{
+        margin: 1.5vh;
+        /* margin-left: 1vw; */
+    }
+    .sch-logo img{
+        width: 10%;
+        height: 10%;
+        margin: 0;
+    }
+
+    .inputs{
+        margin-left: 5vw;
+        width: 25vw;
+    }
+    .input-info{
+        height: 50vh;
+        /* width: 25vw; */
+        display: block;
+        background-image: url("input\ background.png");
+        background-size: contain;
+        border-radius: 10px;
+        margin-left: 1vw;
+        margin-top: 10vh;
+        
+
+    }
+    .input input{
+        width: 80%;
+        height: 8vh;
+        margin-top: 6vh;
+        margin-left: 7%;
+        border-radius: 10px;
+        border: none;
+        padding-left: 1rem;
+        font-family: 'Sora';
+    }
+    button{
+        cursor: pointer;
+        width: 95%;
+        height: 10vh;
+        background-color: blue;
+        color: white;
+        border-radius: 10px;
+        font-family: 'sora';
+        border: none;
+        margin-left: 5%;
+        margin-top: 10%;
+    }
+
+    
+@media (max-width: 1100px) {
+    .both-input{
+        display: block;
+    }
+    .account-info{
+        width: 80%;
+        margin: 10px 7vw;
+
+    }
+    .inputs{
+        width: 85%;
+    }
+    .input-info{
+        width: 100%;
+    }
+    .pay-div{
+        padding: 20px;
+        height: auto;
+        margin: 5% 5%;
+        transform:translateY(100%);
+        transition: transform 0.7s ease;
+        
+    }
+
+    .pay-div.loaded{
+        transform: translateY(0)
+    }
+    }
+  
+
+    
+</style>
+<body>
+    <div class="pay-div">
+        <div class="both-input">
+        <div class="account-info">
+            <div class="sch-logo">
+                <img src="logo.png" alt="">
+                <h4>FELICITY PRIVATE SCHOOLS</h4>
+
+            </div>
+        <div class="acc-info">
+            <h4>Account No.</h4>
+            <h5 style="letter-spacing: 0.5vw;" class="num">2096281242 <i onclick="copyText()" class="fas fa-copy"></i></h5>
+        </div>
+        <div class="acc-info">
+            <h4>Account Name</h4>
+            <h5>ELITE FELICITY PRIVATE SCHOOL</h5>
+        </div>
+        <div class="acc-info">
+            <h4>BANK</h4>
+            <h5>United Bank For Africa (UBA)</h5>
+        </div>
+        <div class="acc-info">
+            <h4>Amount to pay</h4>
+            <h5>&#8358;1500</h5>
+        </div>
+        
+        <p style="color: rgb(66, 66, 66);"><i>Please transfer the exact amount above</i></p>
+        
+            
+</div>
+
+<div class="inputs">
+        <div class="input-info">
+            <p id="error-msg" style="color: red; text-align: center; display: none;"></p>
+<div class="input">
+<input type="text" id="acctHolder" placeholder="Account Holder"> 
+</div>
+
+<div class="input">
+<input type="tel" id="WhatsAppNo" placeholder="WhatsApp Number">
+</div>
+        </div>
+        <a href= "succesful.html"><button id="submit-btn" type="button">I've made the payment.</button></a>
+</div>
+        </div>
+        
+        
+    </div>
+    
+    <script>
+
+    window.addEventListener("load", ()=> {
+        document.querySelector(".pay-div").classList.add("loaded");
+    });
+    
+    
+    function copyText() {
+    let text = document.querySelector(".num").innerText;
+    
+    navigator.clipboard.writeText(text).then(()=> {
+    alert("Copied")
+        
+    });
+        
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Info</title>
+    <link rel="stylesheet" href="logos/css/all.min.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+<script type="text/javascript" src="info-validation.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background">
+        <div class="image">
+<img src="Hero Image.png" alt="">
+        </div>
+        <hr>
+        <div class="student-info">
+            <h2>Student's Details</h2>
+
+            <p id="error-msg" style="color:red; margin: 2vh; display: none;"></p>
+
+            <div class="full-name">
+                <!-- <div class="tag">Fullname</div> -->
+                <input type="text"  id="fullname" placeholder="Fullname">
+            </div>
+            <div class="admission-no">
+                <!-- <div class="tag">Admission No</div> -->
+                <input type="text"  id="admission-input" placeholder="Admission No">
+            </div>
+            <div class="class">
+                <!-- <div class="tag">Class</div> -->
+                <input type="text"  id="class" placeholder="Class">
+            </div>
+           <a href="verifydetails.html"><button id="submit-btn" type="button">Next ></button></a>
+
+        </div>
+       
+    </div>
+</body>
+</html>

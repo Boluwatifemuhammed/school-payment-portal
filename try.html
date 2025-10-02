@@ -1,0 +1,135 @@
+<!-- Thriving quietly plotting silenty -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admission Number Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f5f8ff;
+    }
+    .container {
+      max-width: 400px;
+      margin: auto;
+      height: 70vh;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    }
+    input{
+      width: 95%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    #section, #class{
+      width: 100%;
+      padding: 10px;
+      margin: 4px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      background: #2563eb;
+      color: white;
+      border: none;
+      cursor: pointer;
+      
+    }
+    button:hover {
+      background: #1d4ed8;
+    }
+    .output {
+      margin-top: 15px;
+      padding: 12px;
+      background: #e0f2fe;
+      border-radius: 8px;
+      font-weight: bold;
+      color: #0c4a6e;
+    }
+      
+  </style>
+ </head>
+ <body>
+  <div class="container">
+    <h2>Admission Number Generator</h2>
+    <input type="text" id="name" placeholder="Enter Student Name" required>
+    <input type="number" id="year" placeholder="Enter Year of Entry" required>
+    <div class="section">
+
+  <select id="section">
+    <option value="" disabled selected>Section</option>
+    <option value="SS">SS</option>
+    <option value="JS">JS</option>
+    <option value="PRY">PRY</option>
+    <option value="NUR">NUR</option>
+    <option value="KG">KG</option>
+  </select><br><br>
+
+  <select id="class">
+    <option value="" disabled selected>Class</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+    </div>
+    <button onclick="generateAdmission()">Generate Admission Number</button>
+    <div id="result" class="output">
+    </div>
+    <button onclick="copyAdmissionNo()">Copy</button>                   
+
+  </div>
+  <script>
+    // Load existing numbers from LocalStorage
+    let generatedNumbers = JSON.parse(localStorage.getItem("generatedNumbers")) || {};
+    function generateAdmission() {
+      let name = document.getElementById("name").value.trim();
+      let year = document.getElementById("year").value.trim();
+      let section = document.getElementById("section").value;
+      let classValue = document.getElementById("class").value;
+      if (!name || !year) {
+        alert("Please enter student name and year!");
+        return;
+      }
+      // If year not yet used, start sequence
+      if (!generatedNumbers[year]) {
+        generatedNumbers[year] = 1;
+      } else {
+        generatedNumbers[year]++;
+      }
+      // Generate Admission Number Format: FPS/YEAR/000X
+      let sequence = String(generatedNumbers[year]).padStart(3, '0');
+    const admissionNo = `FPS/${year}/${section}${classValue}/${sequence}`;
+      // Save back to LocalStorage
+      localStorage.setItem("generatedNumbers", JSON.stringify(generatedNumbers));
+      // Display Result
+      document.getElementById("result").innerHTML =
+        `Student: ${name} <br> Admission Number: <strong>${admissionNo}</strong>`;
+    }
+    function copyAdmissionNo() {
+        const admissionNo = document.getElementById("result").innerText;
+        if (!admissionNo) {
+            alert("No Admission number to copy!");
+            return;
+            
+        }
+        navigator.clipboard.writeText(admissionNo).then(() =>{
+            alert("Copied!");
+        } );
+    }
+  </script>
+ </body>
+ </html>

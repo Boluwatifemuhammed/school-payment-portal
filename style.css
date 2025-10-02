@@ -1,0 +1,105 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'sora';
+}
+a{
+    text-decoration: none;
+
+}
+body{
+    font-family:'sora';
+    background-color: rgb(88, 88, 255);
+
+}
+.background{
+    width: 80%;
+    height: 80vh;
+    /* background-color: #dee1fc; */
+  background: linear-gradient( to right, #dee1fc , #c2c8fd);
+    border-radius: 20px;
+    margin: 5% 0% 0% 10%;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+}
+
+.image img{
+    width: 90%;
+    /* height: 80%; */
+    margin-top: 15px;
+    margin-left: 5vw;
+
+}
+
+.student-info{
+    margin: 5%;
+    width: 50%;
+    font-family:'sora';
+}
+.student-info input{
+    box-sizing: border-box;
+    flex-grow: 1;
+    width: 70%;
+    height: 50px;
+    padding: 1em;
+    font: inherit;
+    border: none;
+    border-radius: 10px;
+}
+
+.student-info > div{
+    margin-top: 7%;
+}
+
+hr{
+    border: 1px solid #0075fc;
+    height: 80%;
+    margin-top: 5%;
+}
+.tag{
+    margin-bottom: 2%;
+}
+button{
+    width: 70%;
+    height: 50px;
+    color: white;
+    background-color: #0075fc;
+    border-radius: 10px;
+    border: none;
+    margin-top: 5vh;
+    cursor: pointer;
+}
+button a {
+    color: white;
+}
+
+button:hover{
+    scale: 1.03;
+    background-color: #0c4f9c;
+    transition: 0.7s;
+
+}
+
+@media (max-width: 1100px) {
+    .background{
+        display: block;
+        text-align: center;
+        margin-top: 10vh;
+    }
+    .image img{
+        width: 30%;
+       
+    }
+    hr{
+        display: none;
+    }
+    .student-info{
+        margin: 0;
+        width: 100%;
+    }
+    
+    button{
+        margin-top: 5vh;
+    }
+    
+  }

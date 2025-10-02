@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Successful</title>
+    <script defer src="successful.js"></script>
+    <style>
+        body{
+            background-color: #5858ff;
+        }
+        .verify-cont{
+            background-color: rgb(241, 241, 241);
+            border-radius: 15px;
+            margin: 7vh 30vw;
+            height: auto;
+            padding: 1.5vh;
+            text-align: center;
+            font-family: 'poppins';
+            place-items: center;
+
+
+        }
+
+        img{
+            width: 7vw;
+            height: 10vh;
+            /* margin-top: 15px; */
+        }
+        h1{
+            color: rgb(19, 19, 94);
+        }
+
+        .header{
+            display: flex;
+            place-items: center;
+        }
+        .details{
+            border: 2px solid rgb(120 163 221);
+            border-radius: 10px;
+            color: rgb(73, 73, 73);
+            width: 70%;
+            margin-top: 1vh;
+            padding-top: 1.5vh;
+        }
+        button{
+    width: 70%;
+    height: 50px;
+    color: white;
+    background-color: #0075fc;
+    border-radius: 10px;
+    border: none;
+    margin: 3vh 0 2vh 0;
+    cursor: pointer;
+    font-family: 'poppins';
+
+}
+button a {
+    color: white;
+}
+
+button:hover{
+    scale: 1.03;
+    background-color: #0c4f9c;
+    transition: 0.7s;
+
+}
+
+
+
+@media (max-width: 800px) {
+    .verify-cont{
+        margin: 5vh;
+    }
+
+    img{
+            width: 15vw;
+            height: 7vh;
+            margin-top: 2vh;
+        }
+    h1{
+        font-size: 30px;    
+    }
+
+    .details{
+        /* margin: 36px; */
+        justify-content: center;
+    }
+
+     .header{
+            display: block;
+            place-items: center;
+        }
+
+}
+    </style>
+</head>
+<body>
+    <div class="verify-cont">
+        <div class="header">
+            <img src="verify badge.png" alt="">
+        <h1>Verify Details</h1>
+        </div>
+<div class="details">
+    <i><p>Account </p></i>
+<h5 id="acctHolder"></h5>
+<i><p>Admission No.</p></i>
+<h5 id="WhatsAppNo"></h5>
+
+</div>
+           <a href="info.html"><button id="submit-btn" type="button">DONE</button></a>
+    </div>
+</body>
+</html>
