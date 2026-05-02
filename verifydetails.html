@@ -8,6 +8,11 @@
     <style>
         body{
             background-color: rgb(7 18 129);
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+
         }
         .verify-cont{
             background-color: rgb(241, 241, 241);
@@ -18,14 +23,13 @@
             text-align: center;
             font-family: 'poppins';
             place-items: center;
-
-
+            width: 100%;
+            
         }
 
         img{
             width: 7vw;
             height: 10vh;
-            /* margin-top: 15px; */
         }
         h1{
             color: rgb(19, 19, 94);
@@ -68,7 +72,7 @@ button:hover{
 
 
 
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
     .verify-cont{
         margin: 5vh;
     }
@@ -110,6 +114,9 @@ button:hover{
 <h5 id="show-class"></h5>
 </div>
            <a href="payment.html"><button id="submit-btn" type="button">Proceed</button></a>
+           <div class="go-back">
+           <a href="#" onclick="history.back(); return false;">Go back</a>
+           </div>
     </div>
 </body>
 </html>
